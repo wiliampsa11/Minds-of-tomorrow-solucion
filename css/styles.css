@@ -201,3 +201,84 @@ li a:hover {
 
 
 /**/
+
+/* Legibilidad y adaptación a pantallas (2026) */
+body {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #1d1d1f;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 16px;
+    background-color: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+}
+
+#nav li {
+    float: none;
+    width: auto;
+}
+
+#nav li a {
+    font-size: clamp(.9rem, 1.4vw, 1.1rem);
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 999px;
+}
+
+#nav li a:hover,
+#nav li a:focus-visible {
+    background-color: #1d1d1f;
+    color: #fff;
+}
+
+.header {
+    background-image: linear-gradient(rgba(255, 255, 255, .72), rgba(255, 255, 255, .55)), url('../img/banner-2.jpg');
+    background-position: center;
+    padding: clamp(110px, 16vw, 200px) 20px clamp(70px, 10vw, 140px);
+}
+
+.header h1 {
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.two-column h1 {
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    line-height: 1.2;
+}
+
+.two-column p {
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    line-height: 1.6;
+}
+
+.one-column h1 {
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 760px) {
+    .header {
+        background-attachment: scroll;
+    }
+
+    .two-column {
+        width: 100%;
+    }
+
+    .padding-30 {
+        padding: 24px 16px;
+    }
+}
